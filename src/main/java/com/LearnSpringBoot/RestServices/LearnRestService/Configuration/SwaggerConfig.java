@@ -22,7 +22,7 @@ public class SwaggerConfig {
             "Emanual Alby",
             "http://www.LearnSpring.com",
             "emanual.alby@gmail.com");
-    
+
     public static final ApiInfo DEFAULT_API_INFO
             = new ApiInfo(
             "Wonderful Lean springboot title",
