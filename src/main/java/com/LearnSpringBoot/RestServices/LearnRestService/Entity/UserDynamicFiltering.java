@@ -1,6 +1,6 @@
 package com.LearnSpringBoot.RestServices.LearnRestService.Entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -11,8 +11,8 @@ import java.util.Date;
 
 @ApiModel(description = "Required field to create a User")
 @Data
-public class User {
-
+@JsonFilter("ApplyUserIdFilter")
+public class UserDynamicFiltering {
 
     private Integer userId;
 
@@ -20,14 +20,14 @@ public class User {
     @Size(min =2, message = "Name of the user should be at least 2 characters")
     private String name;
 
-    @ApiModelProperty(notes = "Birth data cannot be in the past")
+    @ApiModelProperty(notes = "Birth date cannot be in the past")
     @Past
     private Date birthDate;
 
-    public User() {
+    public UserDynamicFiltering() {
     }
 
-    public User(Integer userId, String name, Date birthDate) {
+    public UserDynamicFiltering(Integer userId, String name, Date birthDate) {
         this.userId = userId;
         this.name = name;
         this.birthDate = birthDate;

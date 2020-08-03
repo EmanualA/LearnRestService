@@ -11,7 +11,7 @@ import java.util.Date;
 
 @ApiModel(description = "Required field to create a User")
 @Data
-public class User {
+public class UserStaticFiltering {
 
 
     private Integer userId;
@@ -22,12 +22,13 @@ public class User {
 
     @ApiModelProperty(notes = "Birth data cannot be in the past")
     @Past
+    @JsonIgnore
     private Date birthDate;
 
-    public User() {
+    public UserStaticFiltering() {
     }
 
-    public User(Integer userId, String name, Date birthDate) {
+    public UserStaticFiltering(Integer userId, String name, Date birthDate) {
         this.userId = userId;
         this.name = name;
         this.birthDate = birthDate;
