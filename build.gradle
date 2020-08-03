@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.LearnSpringBoot.RestServices'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+
+	implementation 'javax.validation:validation-api'
+	implementation 'org.hibernate.validator:hibernate-validator'
+	implementation 'com.h2database:h2'
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile 'org.projectlombok:lombok'
+	compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml'
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+	compile group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+}
+
+test {
+	useJUnitPlatform()
+}
