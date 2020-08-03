@@ -1,4 +1,4 @@
-package com.LearnSpringBoot.RestServices.LearnRestService.api;
+package com.LearnSpringBoot.RestServices.LearnRestService.Controllers;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
